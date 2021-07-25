@@ -1,0 +1,40 @@
+{
+  "name": "api-monitor",
+  "version": "1.0.0",
+  "main": "build/app.js",
+  "scripts": {
+    "clear": "(if exist build rmdir build /q /s)",
+    "prebuild": "npm run clear",
+    "build": "tsc",
+    "watch": "npm i&&npm run clear&&tsc --watch",
+    "dev": "export NODE_ENV=development&&node .",
+    "start": "npm i --only=prod&&export NODE_ENV=production&&node ."
+  },
+  "_moduleAliases": {
+    "@": "build"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.5.0",
+    "axios": "^0.21.1",
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "node-schedule": "^2.0.0",
+    "tslog": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.39",
+    "@types/node": "^16.4.2",
+    "@types/node-schedule": "^1.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  }
+}
